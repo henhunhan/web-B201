@@ -1,0 +1,35 @@
+{
+    "dockerFiles": [
+      {
+        "id": 1,
+        "name": "5024261001_image",
+        "lastUpdated": "2024-09-21T08:30:00Z",
+        "size": 25
+      },
+      {
+        "id": 2,
+        "name": "5024261069_image",
+        "lastUpdated": "2024-09-19T12:10:00Z",
+        "size": 15
+      },
+      {
+        "id": 3,
+        "name": "5024261099_image",
+        "lastUpdated": "2024-09-20T14:50:00Z",
+        "size": 40
+      },
+      {
+        "id": 4,
+        "name": "5024261034_image",
+        "lastUpdated": "2024-09-15T10:00:00Z",
+        "size": 30
+      },
+      {
+        "id": 5,
+        "name": "502426111_image",
+        "lastUpdated": "2024-09-22T11:30:00Z",
+        "size": 45
+      }
+    ]
+  }
+  
