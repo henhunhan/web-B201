@@ -4,7 +4,7 @@
 #### Clone dulu reponya, buka terminal di folder yang kalian mau lalu :
 ```bash
 git clone https://github.com/maozora/B201-DockerHub.git
-cd b201-docker-hub
+cd B201-DockerHub
 ```
 #### 1. Install dependancies
 ```bash
