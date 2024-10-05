@@ -53,7 +53,7 @@ const App = () => {
             ? new Date(a.lastUpdated) - new Date(b.lastUpdated)
             : new Date(b.lastUpdated) - new Date(a.lastUpdated);
         case 'size':
-          return isAscending ? a.size - b.size : b.size - a.size;
+          return isAscending ? a.sizeInBytes - b.sizeInBytes : b.sizeInBytes - a.sizeInBytes;
         default:
           return 0;
       }

@@ -8,7 +8,7 @@ const FilterButtons = ({ onSortChange, isAscending }) => {
       <button onClick={() => onSortChange('name')}>
         Name {isAscending ? '↑' : '↓'}
       </button>
-      <button onClick={() => onSortChange('sizeInBytes')}>
+      <button onClick={() => onSortChange('size')}>
         Size {isAscending ? '↑' : '↓'}
       </button>
     </div>
