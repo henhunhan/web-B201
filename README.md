@@ -14,7 +14,7 @@ npm install
 ```bash
 npx json-server --watch db.json --port 5001
 ```
-#### 3. Start appnya
+#### 3. Buka terminal baru lalu start appnya
 ```bash
 npm start
 ```
