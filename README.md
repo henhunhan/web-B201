@@ -1,11 +1,23 @@
 # Mock Version Using Mock API
-## kalau kalian mau nyoba install download dulu aja 
 ### make sure kalian sudah install node.js
 
-
-#### '1. Buka terminal ketik npm install'
-#### '2. kemudian ketik npx json-server --watch db.json --port 5001'
-#### '3. kemudian ketik npm start'
+#### Clone dulu reponya, buka terminal di folder yang kalian mau lalu :
+```bash
+git clone https://github.com/maozora/B201-DockerHub.git
+cd b201-docker-hub
+```
+#### 1. Install dependancies
+```bash
+npm install
+```
+#### 2. Nyalakan Mock API 
+```bash
+npx json-server --watch db.json --port 5001
+```
+#### 3. Start appnya
+```bash
+npm start
+```
 
 ## Preview
 ### Dark Mode :
