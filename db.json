@@ -1,35 +1,316 @@
 {
-    "dockerFiles": [
+  "images": [{
+    "name": "07211840000037-hello",
+    "tags": [
       {
-        "id": 1,
-        "name": "5024261001_image",
-        "lastUpdated": "2024-09-21T08:30:00Z",
-        "size": 25
-      },
-      {
-        "id": 2,
-        "name": "5024261069_image",
-        "lastUpdated": "2024-09-19T12:10:00Z",
-        "size": 15
-      },
-      {
-        "id": 3,
-        "name": "5024261099_image",
-        "lastUpdated": "2024-09-20T14:50:00Z",
-        "size": 40
-      },
-      {
-        "id": 4,
-        "name": "5024261034_image",
-        "lastUpdated": "2024-09-15T10:00:00Z",
-        "size": 30
-      },
-      {
-        "id": 5,
-        "name": "502426111_image",
-        "lastUpdated": "2024-09-22T11:30:00Z",
-        "size": 45
+        "name": "latest",
+        "sizeInBytes": 3409575
       }
-    ]
-  }
-  
+    ],
+    "sizeInBytes": 3409575
+  },
+  {
+    "name": "5024201073-its-gram-api",
+    "tags": [
+      {
+        "name": "1",
+        "sizeInBytes": 152969616
+      },
+      {
+        "name": "latest",
+        "sizeInBytes": 30996295
+      }
+    ],
+    "sizeInBytes": 183965911
+  },
+  {
+    "name": "5024201073-its-gram-postgres",
+    "tags": [
+      {
+        "name": "1",
+        "sizeInBytes": 26068329
+      },
+      {
+        "name": "latest",
+        "sizeInBytes": 153448711
+      }
+    ],
+    "sizeInBytes": 179517040
+  },
+  {
+    "name": "5024211004-inventory_management_backend",
+    "tags": [
+      {
+        "name": "1",
+        "sizeInBytes": 55722928
+      },
+      {
+        "name": "latest",
+        "sizeInBytes": 55723982
+      }
+    ],
+    "sizeInBytes": 111446910
+  },
+  {
+    "name": "5024211004-inventory_management_frontend",
+    "tags": [
+      {
+        "name": "1",
+        "sizeInBytes": 20552297
+      },
+      {
+        "name": "latest",
+        "sizeInBytes": 20552286
+      }
+    ],
+    "sizeInBytes": 41104583
+  },
+  {
+    "name": "5024211009-backend",
+    "tags": [
+      {
+        "name": "latest",
+        "sizeInBytes": 59172776
+      }
+    ],
+    "sizeInBytes": 59172776
+  },
+  {
+    "name": "5024211009-frontend",
+    "tags": [
+      {
+        "name": "latest",
+        "sizeInBytes": 21525892
+      }
+    ],
+    "sizeInBytes": 21525892
+  },
+  {
+    "name": "5024211030-backend",
+    "tags": [
+      {
+        "name": "1",
+        "sizeInBytes": 158285100
+      },
+      {
+        "name": "3",
+        "sizeInBytes": 158284767
+      },
+      {
+        "name": "4",
+        "sizeInBytes": 158284767
+      },
+      {
+        "name": "7",
+        "sizeInBytes": 158285109
+      },
+      {
+        "name": "8",
+        "sizeInBytes": 158285109
+      }
+    ],
+    "sizeInBytes": 791424852
+  },
+  {
+    "name": "5024211030-backend-chitchat",
+    "tags": [
+      {
+        "name": "1",
+        "sizeInBytes": 417299434
+      }
+    ],
+    "sizeInBytes": 417299434
+  },
+  {
+    "name": "5024211030-frontend",
+    "tags": [
+      {
+        "name": "1",
+        "sizeInBytes": 21393697
+      },
+      {
+        "name": "3",
+        "sizeInBytes": 21266406
+      },
+      {
+        "name": "4",
+        "sizeInBytes": 21266430
+      },
+      {
+        "name": "7",
+        "sizeInBytes": 21393697
+      },
+      {
+        "name": "8",
+        "sizeInBytes": 21393835
+      }
+    ],
+    "sizeInBytes": 106714065
+  },
+  {
+    "name": "5024211030-frontend-chitchat",
+    "tags": [
+      {
+        "name": "1",
+        "sizeInBytes": 21266401
+      }
+    ],
+    "sizeInBytes": 21266401
+  },
+  {
+    "name": "5024211056-backend",
+    "tags": [
+      {
+        "name": "1",
+        "sizeInBytes": 48714177
+      },
+      {
+        "name": "2",
+        "sizeInBytes": 48714174
+      }
+    ],
+    "sizeInBytes": 97428351
+  },
+  {
+    "name": "5024211056-frontend",
+    "tags": [
+      {
+        "name": "1",
+        "sizeInBytes": 21249882
+      },
+      {
+        "name": "2",
+        "sizeInBytes": 21250007
+      }
+    ],
+    "sizeInBytes": 42499889
+  },
+  {
+    "name": "5024211072-backend",
+    "tags": [
+      {
+        "name": "1",
+        "sizeInBytes": 415949329
+      }
+    ],
+    "sizeInBytes": 415949329
+  },
+  {
+    "name": "5024211072-frontend",
+    "tags": [
+      {
+        "name": "1",
+        "sizeInBytes": 20802070
+      }
+    ],
+    "sizeInBytes": 20802070
+  },
+  {
+    "name": "bakwan",
+    "tags": [
+      {
+        "name": "1.0",
+        "sizeInBytes": 91761232
+      },
+      {
+        "name": "1.1",
+        "sizeInBytes": 91761307
+      },
+      {
+        "name": "1.2",
+        "sizeInBytes": 91761307
+      },
+      {
+        "name": "1.3",
+        "sizeInBytes": 91766001
+      },
+      {
+        "name": "1.4",
+        "sizeInBytes": 91766479
+      },
+      {
+        "name": "latest",
+        "sizeInBytes": 91766479
+      }
+    ],
+    "sizeInBytes": 550582805
+  },
+  {
+    "name": "mwb",
+    "tags": [
+      {
+        "name": "1.0",
+        "sizeInBytes": 575953781
+      },
+      {
+        "name": "latest",
+        "sizeInBytes": 575953781
+      }
+    ],
+    "sizeInBytes": 1151907562
+  },
+  {
+    "name": "system-base-ubuntu",
+    "tags": [
+      {
+        "name": "1.0",
+        "sizeInBytes": 288210241
+      },
+      {
+        "name": "1.1",
+        "sizeInBytes": 288210369
+      },
+      {
+        "name": "1.2",
+        "sizeInBytes": 288407104
+      },
+      {
+        "name": "1.3",
+        "sizeInBytes": 459532204
+      },
+      {
+        "name": "1.4",
+        "sizeInBytes": 465683105
+      },
+      {
+        "name": "1.5",
+        "sizeInBytes": 515309040
+      },
+      {
+        "name": "1.6",
+        "sizeInBytes": 515309650
+      },
+      {
+        "name": "1.7",
+        "sizeInBytes": 515311879
+      },
+      {
+        "name": "1.8",
+        "sizeInBytes": 515311902
+      },
+      {
+        "name": "1.9",
+        "sizeInBytes": 656695898
+      },
+      {
+        "name": "latest",
+        "sizeInBytes": 656695898
+      }
+    ],
+    "sizeInBytes": 5164677290
+  },
+  {
+    "name": "system-kakilima",
+    "tags": [
+      {
+        "name": "1.0",
+        "sizeInBytes": 92580135
+      },
+      {
+        "name": "latest",
+        "sizeInBytes": 92580135
+      }
+    ],
+    "sizeInBytes": 185160270
+  }]
+}

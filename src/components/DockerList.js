@@ -9,8 +9,15 @@ const DockerList = ({ files }) => {
         files.map((file) => (
           <div key={file.id} className="docker-item">
             <h2>{file.name}</h2>
-            <p>Last Updated: {new Date(file.lastUpdated).toLocaleDateString()}</p>
-            <p>Size: {file.size} MB</p>
+            <p>Size: {Math.round(file.sizeInBytes / (1024 * 1024))} MB</p>
+            <div className="tags-list">
+              {file.tags.map((tag, index) => (
+                <div key={index} className="tag-item">
+                  <span className="tag-name">{tag.name}</span>
+                  <span className="tag-size"> - {Math.round(tag.sizeInBytes / (1024 * 1024))} MB</span>
+                </div>
+              ))}
+            </div>
           </div>
         ))
       ) : (
