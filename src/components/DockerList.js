@@ -19,7 +19,19 @@ const DockerList = ({ files }) => {
             onClick={() => handleToggle(index)} // Toggle expand/collapse on click
             style={{ height: expandedIndex === index ? `${80 + file.tags.length * 50}px` : '80px' }} // Adjust height based on tags
           >
-            <h2>{file.name}</h2>
+            <div className='test'>
+              <h2>{file.name}</h2>
+              <div className='test2'>
+                {file.tags.slice(-1).map((tag, tagIndex) => (
+                  <div key={tagIndex} className="latest-tag">
+                    <span className="latest-tag">{tag.name} </span>
+                  </div>
+                ))}
+                <p className='Size-text'>-{Math.round(file.sizeInBytes / (1024 * 1024))} MB</p>
+
+              </div>
+
+            </div>
 
             {expandedIndex === index && ( // Only show tags if the item is expanded
               <div className="tags-list">
@@ -29,7 +41,6 @@ const DockerList = ({ files }) => {
                     <span className="tag-size">{Math.round(tag.sizeInBytes / (1024 * 1024))} MB</span>
                   </div>
                 ))}
-                <p className='Size-text'>-{Math.round(file.sizeInBytes / (1024 * 1024))} MB</p>
               </div>
             )}
           </div>

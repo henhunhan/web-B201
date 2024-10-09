@@ -19,7 +19,8 @@
 }
 
 .docker-item.expanded {
-  transition: height 0.3s ease; /* Animasi untuk expand */
+  transition: height 0.3s ease;
+  /* Animasi untuk expand */
 }
 
 .docker-item h2 {
@@ -42,7 +43,21 @@
 .tags-list {
   display: flex;
   flex-direction: column;
-  gap: 5px; /* Spasi antar tags */
+  gap: 5px;
+  /* Spasi antar tags */
+}
+
+.test {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.test2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .tag-item {
@@ -51,10 +66,17 @@
   background-color: var(--secondary-bg);
   padding: 10px;
   border-radius: 8px;
+  margin: 5px;
 }
 
 .tag-name {
   color: var(--primary-text);
+}
+
+.latest-tag {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .tag-size {
