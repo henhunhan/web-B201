@@ -3,15 +3,18 @@
 .app-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensures footer stays at the bottom */
+  min-height: 100vh; /*Ensures footer stays at the bottom*/
 }
 
 .app-header {
   background-color: #1f1f1f;
   display: flex;
   justify-content: center;
+  align-items: center;
   color: white;
+  gap: 50px;
 }
+
 
 .search-filter-container {
   display: flex;
@@ -54,12 +57,10 @@
   background-color: #ffffff;
 }
 
-.dark .search-filter-container input {
-  background-color: #333;
+.dark .search-filter-container{
   color: white;
 }
 
-.light .search-filter-container input {
-  background-color: #f0f0f0;
+.light .search-filter-container{  
   color: black;
 }

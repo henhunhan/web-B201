@@ -4,8 +4,9 @@ import { getDockerFiles } from './api/dockerApi';
 import DockerList from './components/DockerList';
 import SearchBar from './components/SearchBar';
 import FilterButtons from './components/FilterButtons';
-import Footer from './components/Footer';
+import Footer from './components/Logo';
 import './App.css';
+
 
 const App = () => {
   const [dockerFiles, setDockerFiles] = useState([]);
@@ -66,15 +67,17 @@ const App = () => {
   return (
     <div className={`app-container ${isDarkMode ? 'dark' : 'light'}`}>
       <header className="app-header">
-        <h1>Docker Image Repository Teknik Komputer ITS</h1>
-        <button className="theme-toggle" onClick={handleThemeToggle}>
-          {isDarkMode ? '🌙' : '☀️'}
-        </button>
-        
-      </header>
-      <div className="search-filter-container">
+          <Footer />
           <SearchBar value={searchTerm} onChange={handleSearchChange} />
           <FilterButtons onSortChange={handleSortChange} isAscending={isAscending} />
+        <div className='filter-button'>
+          <button className="theme-toggle" onClick={handleThemeToggle}>
+          {isDarkMode ? '🌙' : '☀️'}
+        </button>
+        </div>
+      </header>
+      <div className="search-filter-container">
+          <h1>Docker Image Repository Teknik Komputer ITS</h1>
         </div>
       <main className="main-content">
         {loading ? (
@@ -83,7 +86,6 @@ const App = () => {
           <DockerList files={filteredFiles} />
         )}
       </main>
-      <Footer />
     </div>
   );
 };
