@@ -23,15 +23,20 @@ const DockerList = ({ files }) => {
             onClick={() => handleToggle(index)} // Ketika diklik, atur state untuk expand/collapse
           >
             <h2>{file.name}</h2>
-            <p>Size: {Math.round(file.sizeInBytes / (1024 * 1024))} MB</p>
+            
+            
+            
             <div className="tags-list">
-              {file.tags.map((tag, tagIndex) => (
+              {file.tags.slice(-1).map((tag, tagIndex) => (
                 <div key={tagIndex} className="tag-item">
-                  <span className="tag-name">{tag.name}</span>
-                  <span className="tag-size"> - {Math.round(tag.sizeInBytes / (1024 * 1024))} MB</span>
+                  <span className="tag-name">{tag.name} </span>
                 </div>
               ))}
+              <p className='Size-text'>-{Math.round(file.sizeInBytes / (1024 * 1024))} MB</p>
             </div>
+            
+            
+            
           </div>
         ))
       ) : (
