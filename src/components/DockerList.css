@@ -12,8 +12,15 @@
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+    overflow: hidden; /* untuk menyembunyikan elemen saat height terbatas */
+    height: 80px; /* ketinggian default saat collapsed */
+    cursor: pointer;
   }
   
+  .docker-item.expanded {
+    height: 231px; /* ketinggian saat item di-expand */
+  }
+
   .docker-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
