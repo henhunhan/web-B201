@@ -58,6 +58,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin: 5px;
+  gap: 5px;
 }
 
 .tag-item {
@@ -84,7 +86,6 @@
 }
 
 .Size-text {
-  margin-top: 10px;
   color: var(--primary-text);
   font-weight: bold;
 }
