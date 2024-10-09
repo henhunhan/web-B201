@@ -21,22 +21,26 @@ const DockerList = ({ files }) => {
             key={file.id}
             className={`docker-item ${expandedIndex === index ? 'expanded' : ''}`}
             onClick={() => handleToggle(index)} // Ketika diklik, atur state untuk expand/collapse
+            style={{ height: expandedIndex === index ? `${80 + file.tags.length * 50}px` : '80px' }} // Mengatur tinggi sesuai jumlah tags
           >
-            <h2>{file.name}</h2>
-            
-            
-            
+          
+            <h2>{file.name}</h2> 
+
             <div className="tags-list">
               {file.tags.slice(-1).map((tag, tagIndex) => (
                 <div key={tagIndex} className="tag-item">
                   <span className="tag-name">{tag.name} </span>
                 </div>
               ))}
+              {file.tags.map((tag, tagIndex) => (
+                <div key={tagIndex} className="tag-item">
+                  <span className="tag-name">{tag.name} </span>
+                  <span className="tag-size">{Math.round(tag.sizeInBytes / (1024 * 1024))} MB</span>
+                </div>
+              ))}
               <p className='Size-text'>-{Math.round(file.sizeInBytes / (1024 * 1024))} MB</p>
             </div>
-            
-            
-            
+
           </div>
         ))
       ) : (

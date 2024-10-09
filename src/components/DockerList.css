@@ -1,70 +1,83 @@
-/* src/components/DockerList.css */
 .docker-list {
-    display: grid;
-    flex-wrap: wrap;
-    grid-template-columns: repeat(auto-fit, minmax(1000px, 1fr));
-    gap: 15px;
-  }
-  
-  .docker-item {
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    transition: transform 0.2s ease-in-out, background-color 0.3s ease;
-    overflow: hidden; /* untuk menyembunyikan elemen saat height terbatas */
-    height: 80px; /* ketinggian default saat collapsed */
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .docker-item.expanded {
-    height: 231px; /* ketinggian saat item di-expand */
-  }
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(1000px, 1fr));
+  gap: 15px;
+}
 
-  .docker-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
-  }
-  
-  .docker-item h2 {
-    color: var(--primary-text);
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-    line-height: 0.5;
-  }
-  
-  .docker-item p {
-    color: var(--secondary-text);
-    font-size: 1rem;
-  
-  }
+.docker-item {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
-  .docker-item span {
-    color: var(--secondary-text);
-    font-size: 1rem;
-    
-  }
+.docker-item.expanded {
+  transition: height 0.3s ease; /* Animasi untuk expand */
+}
 
-  .tags-list{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  /* Variables for light and dark mode */
-  :root {
-    --card-bg: #1f1f1f;
-    --primary-text: #1db954;
-    --secondary-text: #bbb;
-  }
-  
-  .light {
-    --card-bg: #fff;
-    --primary-text: #007aff;
-    --secondary-text: #333;
-  }
-  
+.docker-item h2 {
+  color: var(--primary-text);
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  line-height: 0.5;
+}
+
+.docker-item p {
+  color: var(--secondary-text);
+  font-size: 1rem;
+}
+
+.docker-item span {
+  color: var(--secondary-text);
+  font-size: 1rem;
+}
+
+.tags-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Spasi antar tags */
+}
+
+.tag-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--secondary-bg);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.tag-name {
+  color: var(--primary-text);
+}
+
+.tag-size {
+  color: var(--secondary-text);
+}
+
+.Size-text {
+  margin-top: 10px;
+  color: var(--primary-text);
+  font-weight: bold;
+}
+
+/* Variables for light and dark mode */
+:root {
+  --card-bg: #1f1f1f;
+  --secondary-bg: #2c2c2c;
+  --primary-text: #1db954;
+  --secondary-text: #bbb;
+}
+
+.light {
+  --card-bg: #fff;
+  --secondary-bg: #f1f1f1;
+  --primary-text: #007aff;
+  --secondary-text: #333;
+}
