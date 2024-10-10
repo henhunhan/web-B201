@@ -40,11 +40,9 @@ const DockerList = ({ files }) => {
             <div className='test' onClick={() => handleToggle(index)}>
               <h2>{file.name}</h2>
               <div className='test2'>
-                {file.tags.slice(-1).map((tag, tagIndex) => (
-                  <div key={tagIndex} className="latest-tag">
-                    <span className="latest-tag">{tag.name}</span>
-                  </div>
-                ))}
+                <div className="tag-count">
+                  <span className="tag-count">Total Tags: {file.tags.length}</span>
+                </div>
                 <p className='Size-text'>-{Math.round(file.sizeInBytes / (1024 * 1024))} MB</p>
               </div>
             </div>
