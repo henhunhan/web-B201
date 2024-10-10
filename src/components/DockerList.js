@@ -3,6 +3,7 @@ import './DockerList.css';
 
 const DockerList = ({ files }) => {
   const [expandedIndex, setExpandedIndex] = useState(null); // State to track which index is expanded
+  const [selectedTag, setSelectedTag] = useState(null); // State to track selected tag for modal
   const [copiedUrl, setCopiedUrl] = useState(''); // State to track the copied URL
 
   const handleToggle = (index) => {
@@ -11,9 +12,14 @@ const DockerList = ({ files }) => {
   };
 
   const handleTagClick = (file, tag) => {
-    const ip = "10.3.142.201"; // Replace with appropriate IP address
-    const url = `${ip}:5000/${file.name}:${tag.name}`;
+    // Set the selected tag for the modal
+    setSelectedTag({ file, tag });
+  };
 
+  const handleCopyUrl = (file, tag) => {
+    const ip = "10.3.142.201"; // Ganti dengan IP address yang sesuai
+    const url = `${ip}:5000/${file.name}:${tag.name}`;
+    
     // Copy the URL to clipboard
     navigator.clipboard.writeText(url)
       .then(() => {
@@ -25,6 +31,10 @@ const DockerList = ({ files }) => {
       });
   };
 
+  const closeModal = () => {
+    setSelectedTag(null); // Close the modal by setting selectedTag to null
+  };
+
   return (
     <div className="docker-list">
       {files.length > 0 ? (
@@ -33,28 +43,28 @@ const DockerList = ({ files }) => {
             key={file.id}
             className={`docker-item ${expandedIndex === index ? 'expanded' : ''}`}
             onClick={() => handleToggle(index)} // Toggle expand/collapse on click
+            style={{ height: expandedIndex === index ? `${80 + file.tags.length * 50}px` : '80px' }} // Adjust height based on tags
           >
-            {/* Click on this area only to handle toggle */}
-            <div className='file-header' onClick={() => handleToggle(index)}>
+            <div className='test'>
               <h2>{file.name}</h2>
-              <div className='file-info'>
+              <div className='test2'>
                 <div className="tag-count">
-                  <span>Total Tags: {file.tags.length} | </span>
+                  <span className="tag-count">Total Tags: {file.tags.length}</span>
                 </div>
-                <p className='size-text'> {Math.round(file.sizeInBytes / (1024 * 1024))} MB</p>
+                <p className='Size-text'>-{Math.round(file.sizeInBytes / (1024 * 1024))} MB</p>
               </div>
             </div>
 
-            {/* Only expand/collapse if the item index matches */}
-            {expandedIndex === index && (
+            {/* Hanya expand/collapse jika index item cocok */}
+            {expandedIndex === index && ( 
               <div className="tags-list">
                 {file.tags.map((tag, tagIndex) => (
-                  <div
-                    key={tagIndex}
+                  <div 
+                    key={tagIndex} 
                     className="tag-item"
                     onClick={(e) => {
                       e.stopPropagation(); // Stop click from triggering handleToggle
-                      handleTagClick(file, tag); // Copy URL to clipboard
+                      handleTagClick(file, tag); // Open modal for tag details
                     }}
                   >
                     <span className="tag-name">{tag.name}</span>
@@ -67,6 +77,21 @@ const DockerList = ({ files }) => {
         ))
       ) : (
         <p>No files found.</p>
+      )}
+
+      {/* Modal for tag details */}
+      {selectedTag && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h3>Tag Details</h3>
+            <p>File Name: {selectedTag.file.name}</p>
+            <p>Tag: {selectedTag.tag.name}</p>
+            <p>Size: {Math.round(selectedTag.tag.sizeInBytes / (1024 * 1024))} MB</p>
+            <p>URL : 10.3.142.201:5000/{selectedTag.file.name}:{selectedTag.tag.name} </p>
+            <button onClick={() => handleCopyUrl(selectedTag.file, selectedTag.tag)}>Copy URL</button>
+            <button onClick={closeModal}>Close</button>
+          </div>
+        </div>
       )}
     </div>
   );
