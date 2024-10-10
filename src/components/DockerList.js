@@ -12,7 +12,7 @@ const DockerList = ({ files }) => {
 
   const handleTagClick = (file, tag) => {
     const ip = "10.3.142.201"; // Ganti dengan IP address yang sesuai
-    const url = `http://${ip}/${file.name}:${tag.name}`;
+    const url = `${ip}:5000/${file.name}:${tag.name}`;
     
     // Copy the URL to clipboard
     navigator.clipboard.writeText(url)
