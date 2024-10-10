@@ -90,6 +90,22 @@
   font-weight: bold;
 }
 
+.file-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.file-info{
+  display: flex;
+  flex-direction: row;
+  padding: 0px 5px;
+}
+.tag-count{
+  margin-top: 16px;
+  margin-right: 5px;
+}
+
 /* Variables for light and dark mode */
 :root {
   --card-bg: #1f1f1f;

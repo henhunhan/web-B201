@@ -11,7 +11,7 @@ const DockerList = ({ files }) => {
   };
 
   const handleTagClick = (file, tag) => {
-    const ip = "10.3.142.201"; // Ganti dengan IP address yang sesuai
+    const ip = "10.3.142.201"; // Replace with appropriate IP address
     const url = `${ip}:5000/${file.name}:${tag.name}`;
     
     // Copy the URL to clipboard
@@ -33,21 +33,19 @@ const DockerList = ({ files }) => {
             key={file.id}
             className={`docker-item ${expandedIndex === index ? 'expanded' : ''}`}
             onClick={() => handleToggle(index)} // Toggle expand/collapse on click
-            style={{ height: expandedIndex === index ? `${80 + file.tags.length * 50}px` : '80px' }} // Adjust height based on tags
           >
-            
-            {/* Klik pada area ini hanya untuk handleToggle */}
-            <div className='test' onClick={() => handleToggle(index)}>
+            {/* Click on this area only to handle toggle */}
+            <div className='file-header' onClick={() => handleToggle(index)}>
               <h2>{file.name}</h2>
-              <div className='test2'>
+              <div className='file-info'>
                 <div className="tag-count">
-                  <span className="tag-count">Total Tags: {file.tags.length}</span>
+                  <span>Total Tags: {file.tags.length}</span>
                 </div>
-                <p className='Size-text'>-{Math.round(file.sizeInBytes / (1024 * 1024))} MB</p>
+                <p className='size-text'> {Math.round(file.sizeInBytes / (1024 * 1024))} MB</p>
               </div>
             </div>
 
-            {/* Hanya expand/collapse jika index item cocok */}
+            {/* Only expand/collapse if the item index matches */}
             {expandedIndex === index && ( 
               <div className="tags-list">
                 {file.tags.map((tag, tagIndex) => (
