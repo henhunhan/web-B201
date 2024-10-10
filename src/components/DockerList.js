@@ -13,7 +13,7 @@ const DockerList = ({ files }) => {
   const handleTagClick = (file, tag) => {
     const ip = "10.3.142.201"; // Replace with appropriate IP address
     const url = `${ip}:5000/${file.name}:${tag.name}`;
-    
+
     // Copy the URL to clipboard
     navigator.clipboard.writeText(url)
       .then(() => {
@@ -39,18 +39,18 @@ const DockerList = ({ files }) => {
               <h2>{file.name}</h2>
               <div className='file-info'>
                 <div className="tag-count">
-                  <span>Total Tags: {file.tags.length}</span>
+                  <span>Total Tags: {file.tags.length} | </span>
                 </div>
                 <p className='size-text'> {Math.round(file.sizeInBytes / (1024 * 1024))} MB</p>
               </div>
             </div>
 
             {/* Only expand/collapse if the item index matches */}
-            {expandedIndex === index && ( 
+            {expandedIndex === index && (
               <div className="tags-list">
                 {file.tags.map((tag, tagIndex) => (
-                  <div 
-                    key={tagIndex} 
+                  <div
+                    key={tagIndex}
                     className="tag-item"
                     onClick={(e) => {
                       e.stopPropagation(); // Stop click from triggering handleToggle
