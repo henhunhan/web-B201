@@ -8,7 +8,7 @@
 .docker-item {
   background-color: var(--card-bg);
   border-radius: 12px;
-  padding: 20px;
+  padding: 10px 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s ease-in-out, background-color 0.3s ease;
   overflow: hidden;
