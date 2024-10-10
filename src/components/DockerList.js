@@ -56,7 +56,8 @@ const DockerList = ({ files }) => {
             {/* Only expand/collapse if the item index matches */}
             {expandedIndex === index && ( 
               <div className="tags-list">
-                {file.tags.map((tag, tagIndex) => (
+                {file.tags.sort((a,b) => b.name.localeCompare(a.name))
+                .map((tag, tagIndex) => (
                   <div 
                     key={tagIndex} 
                     className="tag-item"
