@@ -67,18 +67,18 @@ const App = () => {
   return (
     <div className={`app-container ${isDarkMode ? 'dark' : 'light'}`}>
       <header className="app-header">
-          <Footer />
-          <SearchBar value={searchTerm} onChange={handleSearchChange} />
-          <FilterButtons onSortChange={handleSortChange} isAscending={isAscending} />
+        <Footer />
+        <SearchBar value={searchTerm} onChange={handleSearchChange} />
+        <FilterButtons onSortChange={handleSortChange} isAscending={isAscending} />
         <div className='filter-button'>
           <button className="theme-toggle" onClick={handleThemeToggle}>
-          {isDarkMode ? '🌙' : '☀️'}
-        </button>
+            {isDarkMode ? '🌙' : '☀️'}
+          </button>
         </div>
       </header>
       <div className="search-filter-container">
-          <h1>Docker Image Repository Teknik Komputer ITS</h1>
-        </div>
+        <h1>Docker Image Repository Teknik Komputer ITS</h1>
+      </div>
       <main className="main-content">
         {loading ? (
           <p>Loading...</p>
