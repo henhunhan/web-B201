@@ -10,8 +10,8 @@ const DockerList = ({ files }) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
 
-  const handleTagClick = (file, tag) => {
-    const ip = "10.3.142.201"; // Replace with appropriate IP address
+  const ip = "10.3.142.201"; // Replace with appropriate IP address
+  const handleTagClick = (file, tag, ip) => {
     const url = `${ip}:5000/${file.name}:${tag.name}`;
 
     // Copy the URL to clipboard
@@ -54,7 +54,7 @@ const DockerList = ({ files }) => {
                     className="tag-item"
                     onClick={(e) => {
                       e.stopPropagation(); // Stop click from triggering handleToggle
-                      handleTagClick(file, tag); // Copy URL to clipboard
+                      handleTagClick(file, tag, ip); // Copy URL to clipboard
                     }}
                   >
                     <span className="tag-name">{tag.name}</span>
