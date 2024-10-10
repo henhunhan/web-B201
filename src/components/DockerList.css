@@ -1,8 +1,35 @@
+.app-container {
+  max-width: 100vw;
+ /* add some padding */
+
+  @media (max-width: 900px) {
+    max-width: 100vw; /* 70% of viewport width */
+}
+@media (max-width: 600px) {
+  max-width: 100vw; /* 60% of viewport width */
+}
+}
+
+/* adjust max-width based on viewport size */
+
+
+
 .docker-list {
   display: grid;
   flex-wrap: wrap;
-  grid-template-columns: repeat(auto-fit, minmax(1000px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(1000px, 1fr)); /* adjusted width */
   gap: 15px;
+  /* add media queries for different screen sizes */
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+
+  }
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .docker-item {
@@ -25,9 +52,22 @@
 
 .docker-item h2 {
   color: var(--primary-text);
-  font-size: 1.4rem;
   margin-bottom: 5px;
   line-height: 0.5;
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    font-size: 0.9rem;
+    line-height: 0.5  ;
+
+  }
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.8rem;
+
+    grid-template-columns: 1fr;
+  }
 }
 
 .docker-item p {
@@ -90,6 +130,24 @@
   font-weight: bold;
 }
 
+
+.file-info p {
+  color: var(--primary-text);
+  font-weight: bold;
+  @media (max-width: 1200px) {
+    font-size: 0.8rem;
+
+  }
+  @media (max-width: 900px) {
+    font-size: 0.5rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.7rem;
+    line-height: 1 ;
+    grid-template-columns: 1fr;
+  }
+}
+
 .file-header{
   display: flex;
   flex-direction: row;
@@ -101,9 +159,28 @@
   flex-direction: row;
   padding: 0px 5px;
 }
+
 .tag-count{
-  margin-top: 16px;
-  margin-right: 5px;
+    margin-top: 16px;
+    margin-right: 5px;
+
+  @media (max-width: 600px) {
+    margin-top: 2px;
+    margin-right: 5px;
+    
+  }
+}
+.tag-count span{
+  @media (max-width: 1200px) {
+    font-size: 0.8rem;
+
+  }
+  @media (max-width: 900px) {
+  }
+  @media (max-width: 600px) {
+    font-size: 0.7rem;
+    
+  }
 }
 
 /* Variables for light and dark mode */

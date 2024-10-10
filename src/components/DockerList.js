@@ -41,6 +41,7 @@ const DockerList = ({ files }) => {
                 <div className="tag-count">
                   <span>Total Tags: {file.tags.length} | </span>
                 </div>
+
                 <p className='size-text'> {Math.round(file.sizeInBytes / (1024 * 1024))} MB</p>
               </div>
             </div>
