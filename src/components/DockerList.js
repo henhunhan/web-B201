@@ -12,12 +12,7 @@ const DockerList = ({ files }) => {
   };
 
   const handleTagClick = (file, tag) => {
-    // Set the selected tag for the modal
-    setSelectedTag({ file, tag });
-  };
-
-  const handleCopyUrl = (file, tag) => {
-    const ip = "10.3.142.201"; // Ganti dengan IP address yang sesuai
+    const ip = "10.3.142.201"; // Replace with appropriate IP address
     const url = `${ip}:5000/${file.name}:${tag.name}`;
     
     // Copy the URL to clipboard
@@ -64,7 +59,7 @@ const DockerList = ({ files }) => {
                     className="tag-item"
                     onClick={(e) => {
                       e.stopPropagation(); // Stop click from triggering handleToggle
-                      handleTagClick(file, tag); // Open modal for tag details
+                      handleTagClick(file, tag); // Copy URL to clipboard
                     }}
                   >
                     <span className="tag-name">{tag.name}</span>
@@ -84,10 +79,10 @@ const DockerList = ({ files }) => {
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h3>Tag Details</h3>
-            <p>File Name: {selectedTag.file.name}</p>
-            <p>Tag: {selectedTag.tag.name}</p>
-            <p>Size: {Math.round(selectedTag.tag.sizeInBytes / (1024 * 1024))} MB</p>
-            <p>URL : 10.3.142.201:5000/{selectedTag.file.name}:{selectedTag.tag.name} </p>
+            <p>Image Name : {selectedTag.file.name}</p>
+            <p>Tag Name : {selectedTag.tag.name}</p>
+            <p>Size : {Math.round(selectedTag.tag.sizeInBytes / (1024 * 1024))} MB</p>
+            <p>Full Quantitative name : 10.3.142.201:5000/{selectedTag.file.name}:{selectedTag.tag.name} </p>
             <button onClick={() => handleCopyUrl(selectedTag.file, selectedTag.tag)}>Copy URL</button>
             <button onClick={closeModal}>Close</button>
           </div>
