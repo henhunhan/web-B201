@@ -24,6 +24,9 @@ const DockerList = ({ files }) => {
       .catch(err => {
         console.error('Failed to copy URL:', err);
       });
+
+    // Set the selectedTag state with file and tag to show in the modal
+   
   };
 
   const closeModal = () => {
@@ -41,16 +44,16 @@ const DockerList = ({ files }) => {
             style={{ height: expandedIndex === index ? `${80 + file.tags.length * 50}px` : '80px' }} // Adjust height based on tags
           >
             <div className='test'>
-              <h2>{file.name}</h2>
+              <h2 className='image-name'>{file.name}</h2>
               <div className='test2'>
                 <div className="tag-count">
-                  <span className="tag-count">Total Tags: {file.tags.length}</span>
+                  <span className="tag-count">{file.tags.length}</span>
                 </div>
                 <p className='Size-text'>-{Math.round(file.sizeInBytes / (1024 * 1024))} MB</p>
               </div>
             </div>
 
-            {/* Hanya expand/collapse jika index item cocok */}
+            {/* Only expand/collapse if the item index matches */}
             {expandedIndex === index && ( 
               <div className="tags-list">
                 {file.tags.map((tag, tagIndex) => (
@@ -59,7 +62,8 @@ const DockerList = ({ files }) => {
                     className="tag-item"
                     onClick={(e) => {
                       e.stopPropagation(); // Stop click from triggering handleToggle
-                      handleTagClick(file, tag); // Copy URL to clipboard
+                      setSelectedTag({ file, tag });
+                     
                     }}
                   >
                     <span className="tag-name">{tag.name}</span>
@@ -78,13 +82,34 @@ const DockerList = ({ files }) => {
       {selectedTag && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h3>Tag Details</h3>
-            <p>Image Name : {selectedTag.file.name}</p>
-            <p>Tag Name : {selectedTag.tag.name}</p>
-            <p>Size : {Math.round(selectedTag.tag.sizeInBytes / (1024 * 1024))} MB</p>
-            <p>Full Quantitative name : 10.3.142.201:5000/{selectedTag.file.name}:{selectedTag.tag.name} </p>
-            <button onClick={() => handleCopyUrl(selectedTag.file, selectedTag.tag)}>Copy URL</button>
-            <button onClick={closeModal}>Close</button>
+            <h3 className='tag-details-text' >Tag Details</h3>
+
+            <table className="tag-table">
+              <tbody>
+                <tr>
+                  <td>Image Name</td>
+                  <td>{selectedTag.file.name}</td>
+                </tr>
+                <tr>
+                  <td>Tag Name</td>
+                  <td>{selectedTag.tag.name}</td>
+                </tr>
+                <tr>
+                  <td>Size</td>
+                  <td>{Math.round(selectedTag.tag.sizeInBytes / (1024 * 1024))} MB</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 className='quantitive-title'>Full Quantitative Name: </h3>
+            
+            <h3 className='quantitive-name'>10.3.142.201:5000/{selectedTag.file.name}:{selectedTag.tag.name}</h3>
+            <div className='modal-button'>
+              <button onClick={()=>handleTagClick(selectedTag.file,selectedTag.tag)}>Copy</button>
+              <button onClick={closeModal}>Close</button>
+
+            </div>
+
           </div>
         </div>
       )}
@@ -93,3 +118,4 @@ const DockerList = ({ files }) => {
 };
 
 export default DockerList;
+

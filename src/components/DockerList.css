@@ -20,6 +20,7 @@
 
 .docker-item.expanded {
   transition: height 0.3s ease;
+  padding-bottom: 10px;
   /* Animasi untuk expand */
 }
 
@@ -43,7 +44,6 @@
 .tags-list {
   display: flex;
   flex-direction: column;
-  gap: 5px;
   /* Spasi antar tags */
 }
 
@@ -52,6 +52,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin-top: 8px;
 }
 
 .test2 {
@@ -62,13 +63,17 @@
   gap: 5px;
 }
 
+.image-name{
+  margin: 0px;
+}
+
 .tag-item {
   display: flex;
   justify-content: space-between;
   background-color: var(--secondary-bg);
   padding: 10px;
   border-radius: 8px;
-  margin: 5px;
+  margin-bottom: 10px;
 }
 
 .tag-name {
@@ -102,10 +107,7 @@
   flex-direction: row;
   padding: 0px 5px;
 }
-.tag-count{
-  margin-top: 16px;
-  margin-right: 5px;
-}
+
 
 /* Variables for light and dark mode */
 :root {
@@ -132,15 +134,63 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+.tag-table td{
+  background-color:var(--secondary-bg);
 }
 
 .modal-content {
-  background-color: white;
+  background-color:var(--card-bg);
+  color: var(--primary-text);
+  display: inline-block;
   padding: 20px;
   border-radius: 5px;
-  max-width: 400px;
-  width: 100%;
+  /*max-width: 50vw;*/
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+}
+
+.halookak{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.halookak h3{
+  margin: 0px;
+}
+
+.tag-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.quantitive-name{
+  border-style: solid 1px ;
+  background-color: var(--secondary-bg);
+  color: var(--secondary-text);
+  border-radius: 12px;
+  padding: 5px;
+
+}
+
+.tag-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.tag-table td:first-child {
+  font-weight: bold;
+  width: 50%;
+  background-color: var(--secondary-bg); /* Untuk memberikan warna berbeda di kolom kiri */
+}
+
+.tag-details-text{
+  text-align: center;
 }
 
 .modal-content h3 {
@@ -148,13 +198,20 @@
 }
 
 .modal-content button {
-  margin-top: 10px;
+  margin-top: 0px;
   padding: 8px 12px;
-  background-color: #007bff;
+  background-color:var(--primary-text);
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  
+}
+
+.modal-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .modal-content button:hover {

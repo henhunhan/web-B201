@@ -1,7 +1,7 @@
 // src/api/dockerApi.js
 import axios from 'axios';
 
-const API_URL = 'http://10.3.142.201/api/images'; // Mock API endpoint
+const API_URL = 'http://10.3.142.201/api/images/all'; // Mock API endpoint
 
 export const getDockerFiles = async () => {
   try {
