@@ -19,7 +19,7 @@ const DockerList = ({ files }) => {
     navigator.clipboard.writeText(url)
       .then(() => {
         setCopiedUrl(url); // Update the state to show which URL was copied
-        alert(`URL copied to clipboard: ${url}`);
+
       })
       .catch(err => {
         console.error('Failed to copy URL:', err);

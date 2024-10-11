@@ -1,8 +1,14 @@
 /* src/components/FilterButtons.css */
 
+.buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
 .filter-buttons {
-    display: flex;
-    gap: 10px;
+  display: flex;
+    gap: 5px;
   }
   
   .filter-buttons button {
@@ -18,6 +24,21 @@
   
   .filter-buttons button:hover {
     background-color: #005bb5;
+  }
+
+  .button-showall button{
+    border-radius: 50px;
+    padding: 12px 30px;
+    background-color: #007aff;
+    color: white;
+    font-size: 0.8rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .button-showall button:hover{
+    background-color: #005bb5;   
   }
   
   /* Dark and Light Mode Styling */
@@ -35,4 +56,21 @@
   .light .filter-buttons button:hover {
     background-color: #97b6d6;
   }
+
+  .dark .button-showall button {
+    background-color: #1db954;
+  }
+  .dark .button-showall button:hover {
+    background-color: #97b6d6;
+  }
+  
+  .light .button-showall button {
+    background-color: #007aff;
+  }
+  
+  .light .button-showall button:hover {
+    background-color: #97b6d6;
+  }
+
+
   
