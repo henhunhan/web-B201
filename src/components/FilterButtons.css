@@ -70,7 +70,7 @@
   .light .button-showall .active {
     background-color: #007aff;
   }
-  .dark .button-showall .inactive {
+  .light .button-showall .inactive {
     background-color: #ff0048;
   }
   .light .button-showall button:hover {
