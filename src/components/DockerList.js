@@ -24,9 +24,21 @@ const DockerList = ({ files }) => {
       .catch(err => {
         console.error('Failed to copy URL:', err);
       });
+  };
 
-    // Set the selectedTag state with file and tag to show in the modal
-   
+  const formatFileSize = (sizeInBytes) => {
+    const units = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+    let size = sizeInBytes;
+    let unitIndex = 0;
+  
+    // Loop untuk membagi size hingga mendapatkan ukuran yang sesuai (di bawah 1000)
+    while (size >= 1024 && unitIndex < units.length - 1) {
+      size = size / 1024;
+      unitIndex++;
+    }
+  
+    // Menggunakan Math.round atau toFixed untuk pembulatan
+    return `${Math.round(size * 100) / 100} ${units[unitIndex]}`;
   };
 
   const closeModal = () => {
@@ -49,7 +61,7 @@ const DockerList = ({ files }) => {
                 <div className="tag-count">
                   <span className="tag-count">{file.tags.length}</span>
                 </div>
-                <p className='Size-text'>-{Math.round(file.sizeInBytes / (1024 * 1024))} MB</p>
+                <p className='Size-text'>-{formatFileSize(file.sizeInBytes)}</p>
               </div>
             </div>
 
@@ -68,7 +80,7 @@ const DockerList = ({ files }) => {
                     }}
                   >
                     <span className="tag-name">{tag.name}</span>
-                    <span className="tag-size">{Math.round(tag.sizeInBytes / (1024 * 1024))} MB</span>
+                    <span className="tag-size">{formatFileSize(tag.sizeInBytes)}</span>
                   </div>
                 ))}
               </div>
@@ -97,7 +109,7 @@ const DockerList = ({ files }) => {
                 </tr>
                 <tr>
                   <td>Size</td>
-                  <td>{Math.round(selectedTag.tag.sizeInBytes / (1024 * 1024))} MB</td>
+                  <td>{formatFileSize(selectedTag.tag.sizeInBytes)}</td>
                 </tr>
               </tbody>
             </table>
