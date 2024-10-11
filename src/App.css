@@ -6,6 +6,7 @@
   min-height: 100vh; /*Ensures footer stays at the bottom*/
 }
 
+
 .app-header {
   background-color: #1f1f1f;
   display: flex;
@@ -13,6 +14,27 @@
   align-items: center;
   color: white;
   gap: 50px;
+}
+@media (max-width: 600px) {
+  .app-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .search-filter-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .search-filter-container h1 {
+    margin-left: 20px;
+  }
+  .search-bar {
+    width: 90%;
+    margin-bottom: 0px;
+  }
+  .filter-buttons {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 
@@ -41,12 +63,6 @@
   align-items: center;
 }
 
-/* Footer styling */
-.footer {
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-}
 
 /* Dark and Light Mode Styles */
 .dark {
