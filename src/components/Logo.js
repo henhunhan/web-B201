@@ -1,7 +1,7 @@
 // src/components/Footer.js
 import React from 'react';
 import './Logo.css';
-import b201 from './assets/b201.png';
+import b201 from './assets/b201(2).png';
 import ce from './assets/ce.png';
 
 
