@@ -13,26 +13,13 @@ const FilterButtons = ({ onSortChange, isAscending, onShowAll, isShowAll }) => {
           Size {isAscending ? '↑' : '↓'}
         </button>
       </div>
-
-    <div className='button-showall'>
-      <button onClick={() => onShowAll()} className='button-showall'>
+    <div className={`button-showall`}>
+      <button onClick={() => onShowAll()} className={`button-showall ${isShowAll ? 'active' : 'inactive'}`}>
          Show All
       </button>
     </div>
-
 </div>
-
   );
 };
-
-// const ShowAllButtons = ({ onShowAll , isShowAll }) => {
-//   return (
-//     <div className="filter-buttons">
-//       <button onClick={() => onShowAll('name')}>
-//         Show All {isShowAll ? '✅' : '❌'}
-//       </button>
-//     </div>
-//   )
-// }
 
 export default FilterButtons;

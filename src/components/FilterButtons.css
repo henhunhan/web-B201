@@ -57,17 +57,22 @@
     background-color: #97b6d6;
   }
 
-  .dark .button-showall button {
+  .dark .button-showall .active{
     background-color: #1db954;
+  }
+  .dark .button-showall .inactive{
+    background-color: #ff0048;
   }
   .dark .button-showall button:hover {
     background-color: #97b6d6;
-  }
+  }  
   
-  .light .button-showall button {
+  .light .button-showall .active {
     background-color: #007aff;
   }
-  
+  .dark .button-showall .inactive {
+    background-color: #ff0048;
+  }
   .light .button-showall button:hover {
     background-color: #97b6d6;
   }

@@ -82,7 +82,7 @@ const App = () => {
             onSortChange={handleSortChange}
             isAscending={isAscending}
             onShowAll={handleToggleShowAll}
-            displayAll={displayAll}
+            isShowAll={displayAll}
           />
         <div className='filter-button'>
           <button className="theme-toggle" onClick={handleThemeToggle}>
