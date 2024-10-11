@@ -10,6 +10,8 @@ import './App.css';
 
 const App = () => {
   const [dockerFiles, setDockerFiles] = useState([]);
+  const [allFiles, setAllFiles] = useState([]);
+  const [displayAll, setDisplayAll] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('');
   const [isAscending, setIsAscending] = useState(true);
@@ -20,7 +22,8 @@ const App = () => {
     const fetchFiles = async () => {
       try {
         const files = await getDockerFiles();
-        setDockerFiles(files);
+        setDockerFiles(files.api1);
+        setAllFiles(files.api2);
       } catch (error) {
         console.error('Failed to fetch files:', error);
       } finally {
@@ -39,7 +42,13 @@ const App = () => {
     setIsAscending(!isAscending); // Toggle ascending/descending when a sort button is clicked
   };
 
-  const filteredFiles = dockerFiles
+  const handleToggleShowAll = () => {
+    setDisplayAll(!displayAll);  // Toggle antara API1 dan API2
+  };
+
+  const filesToDisplay = displayAll ? allFiles : dockerFiles; // Pilih API berdasarkan toggle
+
+  const filteredFiles = filesToDisplay
     .filter((file) =>
       file.name.toLowerCase().includes(searchTerm.toLowerCase())
     )
@@ -69,16 +78,21 @@ const App = () => {
       <header className="app-header">
           <Footer />
           <SearchBar value={searchTerm} onChange={handleSearchChange} />
-          <FilterButtons onSortChange={handleSortChange} isAscending={isAscending} />
+          <FilterButtons
+            onSortChange={handleSortChange}
+            isAscending={isAscending}
+            onShowAll={handleToggleShowAll}
+            displayAll={displayAll}
+          />
         <div className='filter-button'>
           <button className="theme-toggle" onClick={handleThemeToggle}>
-          {isDarkMode ? '🌙' : '☀️'}
-        </button>
+            {isDarkMode ? '🌙' : '☀️'}
+          </button>
         </div>
       </header>
       <div className="search-filter-container">
           <h1>Docker Image Repository Teknik Komputer ITS</h1>
-        </div>
+      </div>
       <main className="main-content">
         {loading ? (
           <p>Loading...</p>
