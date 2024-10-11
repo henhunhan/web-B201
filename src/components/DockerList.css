@@ -156,7 +156,6 @@
   padding: 0px 5px;
 }
 .tag-count{
-    margin-top: 16px;
     margin-right: 5px;
   @media (max-width: 600px) {
     margin-top: 2px;

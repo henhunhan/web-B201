@@ -61,7 +61,7 @@ const DockerList = ({ files }) => {
                 <div className="tag-count">
                   <span className="tag-count">{file.tags.length}</span>
                 </div>
-                <p className='Size-text'>-{formatFileSize(file.sizeInBytes)}</p>
+                <p className='Size-text'>| {formatFileSize(file.sizeInBytes)}</p>
               </div>
             </div>
 
