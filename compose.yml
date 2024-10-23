@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  react-app:
+    container_name: react-app
+    image: node:16-alpine
+    working_dir: /app
+    volumes:
+      - ./src/App:/App
+      - ./node_modules
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm start"
+    environment:
+      - NODE_ENV=development
+#   # Optional: If you need to wait for other services (e.g., a backend)
+#   depends_on:
+#     - backend-service
+#
+#  # Optional: Add a backend service, like an API
+#  backend-service:
+#    container_name: backend
+#    image: your-backend-image
+#    ports:
+#      - "5000:5000"
