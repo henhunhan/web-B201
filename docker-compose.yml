@@ -11,13 +11,13 @@ services:
     environment:
       - NODE_ENV=development # Set environment variable
 
-  # backend:
-  #   image: system-imageviewer:1.0 # Use the same image for the backend (if necessary)
-  #   working_dir: /app
-  #   volumes:
-  #     - ./api:/app # Mount the backend directory
-  #   ports:
-  #     - "5000:5000"
-  #   command: npm run start:backend # Example command, customize as per your backend script
-  #   environment:
-  #     - NODE_ENV=development
+  backend:
+    image: system-imageviewer:1.0 # Use the same image for the backend (if necessary)
+    working_dir: /app
+    volumes:
+      - ./api:/app # Mount the backend directory
+    ports:
+      - "5000:5000"
+    command: npm run start:backend # Example command, customize as per your backend script
+    environment:
+      - NODE_ENV=development
